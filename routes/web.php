@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JournalController;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\UniterController;
 use App\Models\Produit;
@@ -34,6 +35,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('produit', ProduitController::class);
 Route::resource('unite', UniterController::class);
+Route::resource('journal', JournalController::class);
 
 Route::get('/unite-produit', function () {
   $unite = Unite::find(1);

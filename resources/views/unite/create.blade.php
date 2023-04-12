@@ -70,7 +70,7 @@
     </nav>
     <div class=" mt-20">
       <center>
-        <form action="{{route('unite.store')}}" method="post">
+        <form action="{{route('unite.store')}}" method="post" id="create-form">
           @csrf
           <div>
             <label for="name_unite" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name of Unite</label>
@@ -94,7 +94,7 @@
 
           <!-- end multi select -->
           <div class="mt-10">
-            <button type="submit" class="p-3 bg-[#F16B07] hover:bg-[#af540e]  rounded-full w-44  ">Create</button>
+          <button type="submit" id="create-button" class="p-3 bg-[#F16B07] hover:bg-[#af540e] rounded-full w-44">Create</button>
           </div>
         </form>
       </center>
@@ -102,7 +102,20 @@
 
       </div>
 
+<script>
+  const createButton = document.getElementById('create-button');
+  createButton.addEventListener('click', validateForm);
 
+  function validateForm(event) {
+    const form = document.getElementById('create-form');
+    const selectedProducts = form['selectproduit[]'].selectedOptions;
+
+    if (selectedProducts.length === 0) {
+      alert('Please select at least one product.');
+      event.preventDefault();
+    }
+  }
+</script>
 </body>
 
 </html>

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\journal;
+use App\Models\Produit;
+use App\Models\Unite;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $unite = Unite::all();
+      $produit = Produit::all();
+      $journals = journal::all();
+
+
+      return view('home', compact('unite','produit','journals'));
     }
 }

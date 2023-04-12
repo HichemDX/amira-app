@@ -31,7 +31,7 @@
   
 
 
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-lg  w-screen h-26 fixed">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-lg  w-screen h-26 fixed z-10">
       <div class="max-w-screen-xl flex  items-center justify-between mx-auto p-4">
         <div>
           <a href="/" class="flex items-center gap-2">
@@ -100,27 +100,26 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($unite as $value)
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                {{ $value->id }}
-              </th>
-              <td class="px-6 py-4">
-                {{ $value->name }}
-              </td>
-              <td class="px-6 py-4">
-                {{ $value->Position }}
-              </td>
-              <td class="px-6 py-4">
-                <div><a href="unite/show">
-                    <button class="bg-red-500 p-2 text-sm text-white font-normal rounded-lg hover:bg-red-800">Modifier</button></div>
-
-                </a>
-              </td>
-
-            </tr>
-            @endforeach
+      @foreach($unite as $value)
+  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+      {{ $value->id }}
+    </th>
+    <td class="px-6 py-4">
+      {{ $value->name }}
+    </td>
+    <td class="px-6 py-4">
+      {{ $value->Position }}
+    </td>
+    <td class="px-6 py-4">
+      <div>
+        <a href="{{ route('unite.show', ['unite' => $value->id]) }}">
+          <button class="bg-red-500 p-2 text-sm text-white font-normal rounded-lg hover:bg-red-800">Modifier</button>
+        </a>
+      </div>
+    </td>
+  </tr>
+@endforeach
 
 
 

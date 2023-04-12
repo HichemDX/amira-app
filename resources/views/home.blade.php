@@ -31,7 +31,7 @@
   <div id="app">
 
 
-  <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-lg  w-screen h-26">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow-lg  w-screen h-26">
       <div class="max-w-screen-xl flex  items-center justify-between mx-auto p-4">
         <div>
           <a href="/" class="flex items-center gap-2">
@@ -70,11 +70,85 @@
     </nav>
 
     <center>
+      <div class="bg-[#F3F6F9] w-4/5 h-20 rounded-md mt-10 grid grid-cols-7 gap-4 items-center">
+        <h1 class="col-span-1">Unite</h1>
+        <div class="bg-[#D00000] text-white rounded-xl px-4 flex-col h-full col-span-2">
+          <div class="pt-2">
+            <h1>Production</h1>
+          </div>
+          <div class="flex gap-12 pt-4 justify-center">
+            <h1>Previsions</h1>
+            <h1>Realisation</h1>
+            <h1>Taux%</h1>
+          </div>
+        </div>
+        <div class="bg-[#366C00] text-white rounded-xl px-4 flex-col h-full col-span-2">
+          <div class="pt-2">
+
+            <h1>Vent</h1>
+          </div>
+          <div class="flex gap-12 pt-4 justify-center">
+            <h1>Previsions</h1>
+            <h1>Realisation</h1>
+            <h1>Taux%</h1>
+          </div>
+        </div>
+        <div class="bg-[#F16B07] text-white rounded-xl px-4 flex-col h-full col-span-2">
+          <div class="pt-2">
+            <h1>Production Vendue</h1>
+          </div>
+          <div class="flex gap-12 pt-4 justify-center">
+            <h1>Previsions</h1>
+            <h1>Realisation</h1>
+            <h1>Taux%</h1>
+          </div>
+        </div>
+      </div>
+      <!-- ######################################### -->
+      <!-- ######################################### -->
+      <div class="bg-[#F3F6F9] w-4/5 h-20 rounded-md mt-10 grid grid-cols-7 gap-4 items-center">
+      @foreach ($journals as $journals )
+      <h1 class="col-span-1">{{$journals->id_unite}}</h1>
+      <div class="bg-[#D00000] text-white rounded-xl px-4 flex-col h-full col-span-2">
+          <div class="pt-2">
+          </div>
+          <div class="flex gap-12 pt-4 justify-center">
+            <h1>Previsions</h1>
+            <h1>{{$journals->Production}}</h1>
+            <h1>Taux</h1>
+          </div>
+        </div>
+        <div class="bg-[#366C00] text-white rounded-xl px-4 flex-col h-full col-span-2">
+          <div class="pt-2">
+
+          </div>
+          <div class="flex gap-12 pt-4 justify-center">
+            <h1>Previsions</h1>
+            <h1>{{$journals->Vent}}</h1>
+            <h1>Taux</h1>
+          </div>
+        </div>
+        <div class="bg-[#F16B07] text-white rounded-xl px-4 flex-col h-full col-span-2">
+          <div class="pt-2">
+          </div>
+          <div class="flex gap-12 pt-4 justify-center">
+            <h1>Previsions</h1>
+            <h1>{{$journals->Production_Vendue}}</h1>
+            <h1>Taux</h1>
+          </div>
+        </div>
+      </div>
+      @endforeach
+      
+    
 
 
-    </center>
+
+
+
+      <!-- ######################################### -->
   </div>
-  </div>
+
 
 </body>
 
